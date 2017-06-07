@@ -14,9 +14,9 @@ describe("Objects", () => {
 			expect({ a: 1, b: [ 2, 3 ] }).toEqual(JSON.parse("{\"a\":1,\"b\":[2,3]}"));
 		});
 
-		//it("JSON.stringify converts any object to JSON", () => {
-			//expect({"b": 3}).toEqual(JSON.stringify({b:3}));
-		//});
+		it("JSON.stringify converts any object to JSON", () => {
+			expect('{"b":3}').toEqual(JSON.stringify({b:3}));
+		});
 
 	});
 
