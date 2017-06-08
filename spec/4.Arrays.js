@@ -213,61 +213,61 @@ describe("Arrays", () => {
 				expect([1,2,3]).toEqual(copy);
 			});
 
-			fit("slice(begin,end) can copy a part of an array", () => {
-				expect(help).toEqual(["a", "b", 1, 2, 3, "c"].slice(2, 5));
+			it("slice(begin,end) can copy a part of an array", () => {
+				expect([1,2,3]).toEqual(["a", "b", 1, 2, 3, "c"].slice(2, 5));
 			});
 
 			it("slice(position) copies from the position to the end", () => {
-				expect().toEqual(array.slice(1));
+				expect([2,3]).toEqual(array.slice(1));
 			});
 
 			it("slice(-position) copies from the last nth position to the end", () => {
-				expect().toEqual(array.slice(-1));
+				expect([3]).toEqual(array.slice(-1));
 			});
 		});
 
 		describe("concat", () => {
 			it("concatenates another array", () => {
-				expect().toEqual(array.concat([4,5]));
+				expect([1,2,3,4,5]).toEqual(array.concat([4,5]));
 			});
 
 			it("does not modifies the array", () => {
 				array.concat([4,5]);
-				expect().toEqual(array);
+				expect([1,2,3]).toEqual(array);
 			});
 		});
 
 		describe("iterators", () => {
 
 			it("filter selects elements from the array", () => {
-				expect().toEqual(array.filter(n => n % 2 === 1));
+				expect([1,3]).toEqual(array.filter(n => n % 2 === 1));
 			});
 
 			it("map applies a function to each element", () => {
-				expect().toEqual(array.map(n => n * 2));
+				expect([2,4,6]).toEqual(array.map(n => n * 2));
 			});
 
 			it("reduce(fn, initial) applies an accumulator operation", () => {
-				expect().toEqual(array.reduce((s, n) => s + n, 0));
+				expect(6).toEqual(array.reduce((s, n) => s + n, 0));
 			});
 
 			it("every evaluates if a condition is satisfied by all elements", () => {
-				expect().toBe(array.every(n => n >= 0));
-				expect().toBe(array.every(n => n % 2 === 0));
-				expect().toBe(array.every(n => n === -1));
+				expect(true).toBe(array.every(n => n >= 0));
+				expect(false).toBe(array.every(n => n % 2 === 0));
+				expect(false).toBe(array.every(n => n === -1));
 			});
 
 			it("some evaluates if a condition is satisfied by any elements", () => {
-				expect().toBe(array.some(n => n >= 0));
-				expect().toBe(array.some(n => n % 2 === 0));
-				expect().toBe(array.every(n => n === -1));
+				expect(true).toBe(array.some(n => n >= 0));
+				expect(true).toBe(array.some(n => n % 2 === 0));
+				expect(false).toBe(array.every(n => n === -1));
 			});
 
 			it("forEach executes a function for each element", () => {
 				let count = 0;
 				array.forEach(n => count += 1);
 
-				expect().toBe(count);
+				expect(3).toBe(count);
 			});
 
 			it("none modifies the array", () => {
@@ -278,7 +278,7 @@ describe("Arrays", () => {
 				array.some(n => n === 2);
 				array.forEach(n => n++);
 
-				expect().toEqual(array);
+				expect([ 1, 2, 3 ]).toEqual(array);
 			});
 
 		});
@@ -288,27 +288,27 @@ describe("Arrays", () => {
 			beforeEach(() => { array = ["a", "b", "c"]; });
 
 			it("indexOf(value) looks for the same exact value position", () => {
-				expect().toBe(array.indexOf("b"));
+				expect(1).toBe(array.indexOf("b"));
 			});
 
 			it("indexOf(value) returns -1 if the element does not exists", () => {
-				expect().toBe(array.indexOf("e"));
+				expect(-1).toBe(array.indexOf("e"));
 			});
 
 			it("find returns the first element that satisfies a condition", () => {
-				expect().toBe(array.find(l => l > "a"));
+				expect("b").toBe(array.find(l => l > "a"));
 			});
 
 			it("find returns undefined if no element satisfies the condition", () => {
-				expect().toBe(array.find(l => l > "e"));
+				expect(undefined).toBe(array.find(l => l > "e"));
 			});
 
 			it("findIndex returns the position of the first element that satisfies a condition", () => {
-				expect().toBe(array.findIndex(l => l > "a"));
+				expect(1).toBe(array.findIndex(l => l > "a"));
 			});
 
 			it("findIndex returns -1 if no element satisfies the condition", () => {
-				expect().toBe(array.findIndex(l => l > "e"));
+				expect(-1).toBe(array.findIndex(l => l > "e"));
 			});
 
 		});
