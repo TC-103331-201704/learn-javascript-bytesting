@@ -1,145 +1,145 @@
 describe("Strings", () => {
 
-	describe("constants", () => {
+    describe("constants", () => {
 
-		it("\"hello\", \"a\", \"long word\" are constans", () => {
-			expect("solve me").toBe("hello");
-			expect("solve me").toBe("a");
-			expect("solve me").toBe("long word");
-		});
+        it("\"hello\", \"a\", \"long word\" are constans", () => {
+            expect("hello").toBe("hello");
+            expect("a").toBe("a");
+            expect("long word").toBe("long word");
+        });
 
-		it("character is a string with length 1", () => {
-			expect("solve me").toBe("hello"[1])
-		});
+        it("character is a string with length 1", () => {
+            expect("e").toBe("hello" [1])
+        });
 
-	});
+    });
 
-	describe("encoded as UCS-2", () => {
+    describe("encoded as UCS-2", () => {
 
-		it("each position is 16bits and most characters are length 1", () => {
-			expect("solve me").toBe("hello".length);
-			expect("solve me").toBe("mataró".length);
-			expect("solve me").toBe("νερό".length);
-			expect("solve me").toBe("中国".length);
-			expect("solve me").toBe("水".length);
-		});
+        it("each position is 16bits and most characters are length 1", () => {
+            expect(5).toBe("hello".length);
+            expect(6).toBe("mataró".length);
+            expect(4).toBe("νερό".length);
+            expect(2).toBe("中国".length);
+            expect(1).toBe("水".length);
+        });
 
-		it("some characters requires has double length", () => {
-			expect("solve me").toBe("𝄞".length);
-		});
+        it("some characters requires has double length", () => {
+            expect(2).toBe("𝄞".length);
+        });
 
-	});
+    });
 
-	describe("operators", () => {
+    describe("operators", () => {
 
-		it("a + b concatenates two strings", () => {
-			expect("solve me").toBe("hello " + "world");
-		});
+        it("a + b concatenates two strings", () => {
+            expect("hello world").toBe("hello " + "world");
+        });
 
-	});
+    });
 
-	describe("comparisons", () => {
+    describe("comparisons", () => {
 
-		it("a < b returns true if a is less than b", () => {
-			expect("solve me").toBe("ana" < "bu");
-			expect("solve me").toBe("ana" < "ana");
-			expect("solve me").toBe("bu" < "ana");
-		});
+        it("a < b returns true if a is less than b", () => {
+            expect(true).toBe("ana" < "bu");
+            expect(false).toBe("ana" < "ana");
+            expect(false).toBe("bu" < "ana");
+        });
 
-		it("a <= b returns true if a is less than b or equal to b", () => {
-			expect("solve me").toBe("ana" <= "bu");
-			expect("solve me").toBe("ana" <= "ana");
-			expect("solve me").toBe("bu" <= "ana");
-		});
+        it("a <= b returns true if a is less than b or equal to b", () => {
+            expect(true).toBe("ana" <= "bu");
+            expect(true).toBe("ana" <= "ana");
+            expect(false).toBe("bu" <= "ana");
+        });
 
-		it("a >= b returns true if a is greater than b or equal to b", () => {
-			expect("solve me").toBe("ana" >= "bu");
-			expect("solve me").toBe("ana" >= "ana");
-			expect("solve me").toBe("bu" >= "ana");
-		});
+        it("a >= b returns true if a is greater than b or equal to b", () => {
+            expect(false).toBe("ana" >= "bu");
+            expect(true).toBe("ana" >= "ana");
+            expect(true).toBe("bu" >= "ana");
+        });
 
-		it("a > b returns true if a is greater than b", () => {
-			expect("solve me").toBe("ana" > "bu");
-			expect("solve me").toBe("ana" > "ana");
-			expect("solve me").toBe("bu" > "ana");
-		});
+        it("a > b returns true if a is greater than b", () => {
+            expect(false).toBe("ana" > "bu");
+            expect(false).toBe("ana" > "ana");
+            expect(true).toBe("bu" > "ana");
+        });
 
-		it("a === b returns true if both numbers are the same", () => {
-			expect("solve me").toBe("ana" === "bu");
-			expect("solve me").toBe("ana" === "ana");
-			expect("solve me").toBe("bu" === "ana");
-		});
+        it("a === b returns true if both numbers are the same", () => {
+            expect(false).toBe("ana" === "bu");
+            expect(true).toBe("ana" === "ana");
+            expect(false).toBe("bu" === "ana");
+        });
 
-		it("a === b returns false if one is number but the other is not", () => {			
-			expect("solve me").toBe("2" === 2);
-		});
+        it("a === b returns false if one is number but the other is not", () => {
+            expect(false).toBe("2" === 2);
+        });
 
-		it("a !== b returns true if both numbers are the different", () => {
-			expect("solve me").toBe("ana" !== "bu");
-			expect("solve me").toBe("ana" !== "ana");
-			expect("solve me").toBe("bu" !== "ana");
-		});
+        it("a !== b returns true if both numbers are the different", () => {
+            expect(true).toBe("ana" !== "bu");
+            expect(false).toBe("ana" !== "ana");
+            expect(true).toBe("bu" !== "ana");
+        });
 
-		it("a !== b returns true if one is number but the other is not", () => {			
-			expect("solve me").toBe("2" !== 2);
-		});
+        it("a !== b returns true if one is number but the other is not", () => {
+            expect(true).toBe("2" !== 2);
+        });
 
-		it("never use a == b (two equals) you cannot trust it", () => {
-			expect("solve me").toBe("2" == 2);
-		});
+        it("never use a == b (two equals) you cannot trust it", () => {
+            expect(true).toBe("2" == 2);
+        });
 
-		it("never use a != b (one equal) you cannot trust it", () => {
-			expect("solve me").toBe("2" != 2);
-		});
+        it("never use a != b (one equal) you cannot trust it", () => {
+            expect(false).toBe("2" != 2);
+        });
 
-	});
+    });
 
-	describe("methods", () => {
+    describe("methods", () => {
 
-		it("slice(begin, end) gets a substring from the string", () => {
-			expect("solve me").toBe("hello".slice(0, 4));
-		});
+        it("slice(begin, end) gets a substring from the string", () => {
+            expect("hell").toBe("hello".slice(0, 4));
+        });
 
-		it("slice(begin) gets the substring starting at begin", () => {
-			expect("solve me").toBe("hello world".slice(6));
-		});
+        it("slice(begin) gets the substring starting at begin", () => {
+            expect("world").toBe("hello world".slice(6));
+        });
 
-		it("slice(-begin) gets the substring starting at the last character count", () => {
-			expect("solve me").toBe("hello world".slice(-5));
-		});
+        it("slice(-begin) gets the substring starting at the last character count", () => {
+            expect("world").toBe("hello world".slice(-5));
+        });
 
-		it("indexOf finds the first occurrence of a substring", () => {
-			expect("solve me").toBe("foobar".indexOf("bar"));
-		});
+        it("indexOf finds the first occurrence of a substring", () => {
+            expect(3).toBe("foobar".indexOf("bar"));
+        });
 
-		it("indexOf returns -1 if no matching", () => {
-			expect("solve me").toBe("foobar".indexOf("pop"));
-		});
+        it("indexOf returns -1 if no matching", () => {
+            expect(-1).toBe("foobar".indexOf("pop"));
+        });
 
-		it("includes true if there is an occurrence of a substring", () => {
-			expect("solve me").toBe("foobar".includes("bar"));
-		});
+        it("includes true if there is an occurrence of a substring", () => {
+            expect(true).toBe("foobar".includes("bar"));
+        });
 
-		it("includes returns false if no matching", () => {
-			expect("solve me").toBe("foobar".includes("pop"));
-		});
+        it("includes returns false if no matching", () => {
+            expect(false).toBe("foobar".includes("pop"));
+        });
 
-		it("toUpperCase converts a string to uppercase", () => {
-			expect("solve me").toBe("Hello".toUpperCase());
-		});
+        it("toUpperCase converts a string to uppercase", () => {
+            expect("HELLO").toBe("Hello".toUpperCase());
+        });
 
-		it("toLowerCase converts a string to lowercase", () => {
-			expect("solve me").toBe("Hello".toLowerCase());
-		});
+        it("toLowerCase converts a string to lowercase", () => {
+            expect("hello").toBe("Hello".toLowerCase());
+        });
 
-	});
+    });
 
-	describe("cast to String", () => {
+    describe("cast to String", () => {
 
-		it("can convert any object to string with String()", () => {
-			expect("solve me").toBe(String(3));
-		});
+        it("can convert any object to string with String()", () => {
+            expect("3").toBe(String(3));
+        });
 
-	});
+    });
 
 });
