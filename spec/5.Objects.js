@@ -7,7 +7,7 @@ describe("Objects", () => {
 		});
 
 		it("{hello: \"world\"} is an object with one field", () => {
-			expect(["hello world"]).toEqual(jasmine.any(Object));
+			expect({["hello world"]}).toEqual(jasmine.any(Object));
 		});
 
 		it("JSON.parse converts JSON strings to obejcts", () => {
