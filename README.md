@@ -1,3 +1,6 @@
+# Done and pull request by Xavier Oriol Sellés
+
+
 Introduction to Javascript by testing
 =====================================
 
