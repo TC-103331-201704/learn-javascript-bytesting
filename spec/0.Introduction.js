@@ -6,7 +6,7 @@ describe("Introduction", () => {
 
 	it("Your first test to pass, change only expect(contents)", () => {
 		// replace false by true
-		expect(false).toBe(true);
+		expect(true).toBe(true);
 	});
 
 	it("Use \"hint\" if you're get stuck", () => {
